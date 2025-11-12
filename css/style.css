@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* Colors */
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+
+  /* Fonts */
+  --ff-body: "Inter";
+
+  --fs-base: 14px;
+  --fs-sm: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --fs-md: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --fs-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Spacing */
+  --spacing-100: 0.8rem;
+  --spacing-200: 0.875rem;
+  --spacing-300: 1.7rem;
+
+  /* Border Radius */
+  --border-radius-sm: 8px;
+  --border-radius-md: 10px;
+
+  /* Shadows */
+  --shadow-subtle: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+html {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--grey-900);
+}
+.card {
+  width: min(23rem, 90vw);
+  max-width: 25rem;
+  padding: var(--spacing-300);
+
+  background-color: var(--grey-800);
+  color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-subtle);
+}
+.card-content {
+  font-size: var(--fs-md);
+  text-align: center;
+  line-height: 1.5;
+}
+.profile-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  box-shadow: var(--shadow-subtle);
+}
+.profile-name {
+  margin-block-start: var(--spacing-300);
+  font-weight: var(--fw-bold);
+}
+.profile-location {
+  font-weight: var(--fw-semibold);
+  color: var(--green);
+}
+.profile-description {
+  margin-block: var(--spacing-300);
+  font-weight: var(--fw-regular);
+}
+/* Social links */
+.social-list {
+  list-style-type: none;
+}
+.social-item {
+  margin-block-start: var(--spacing-200);
+  padding: var(--spacing-100);
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  background-color: var(--grey-700);
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.social-link {
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+  color: var(--white);
+  transition: 0.1s ease;
+}
+.social-item:hover {
+  background-color: var(--green);
+}
+.social-item:hover .social-link {
+  color: var(--grey-900);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-item,
+  .social-link {
+    transition-duration: 0.01ms;
+  }
+}
