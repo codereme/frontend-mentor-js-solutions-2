@@ -59,16 +59,16 @@ html {
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-subtle);
 }
+.card-content {
+  font-size: var(--fs-md);
+  text-align: center;
+  line-height: 1.5;
+}
 .profile-avatar {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
   box-shadow: var(--shadow-subtle);
-}
-.card-content {
-  font-size: var(--fs-md);
-  text-align: center;
-  line-height: 1.5;
 }
 .profile-name {
   margin-block-start: var(--spacing-300);
