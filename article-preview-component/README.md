@@ -1,21 +1,18 @@
 # Article Preview Component
 
-A modern, responsive solution to the Frontend Mentor challenge. Built with modern practices and cutting-edge technologies.
-
-![Desktop preview](./assets/images/desktop-preview.jpg)
+This project is my solution to the "Article Preview Component" challenge from Frontend Mentor.
 
 ## Table of contents
 
-- [Overview](#-overview)
-- [Built with](#-built-with)
-- [Links](#-links)
-- [What I Learned](#-what-i-learned)
-- [Author](#-author)
-- [Acknowledgments](#-acknowledgments)
+- [Overview](#overview)
+- [Built with](#built-with)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [What I Learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
-
-This project is my solution to the "Article Preview Component" from Frontend Mentor.
 
 The challenge:
 
@@ -23,6 +20,10 @@ The challenge:
 - See the social media share links when they click the share icon.
 
 Original Challenge: [Article preview component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Screenshot
+
+![Desktop screenshot](./assets/images/screenshot.png)
 
 ## Built with
 
@@ -33,6 +34,8 @@ Original Challenge: [Article preview component challenge on Frontend Mentor](htt
 - JavaScript
 
 ## Links
+
+- Live site: [View here](https://codereme.github.io/frontend-mentor-js-solutions-2/article-preview-component/index.html)
 
 ## What I Learned
 
