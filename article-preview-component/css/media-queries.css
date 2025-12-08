@@ -39,10 +39,10 @@
   .card-footer.active {
     background-color: var(--white);
   }
-  .author-content.active {
+  .card-footer.active .author-content {
     display: flex;
   }
-  .social-nav.active {
+  .card-footer.active .social-nav {
     position: absolute;
     inset-block-start: -60px;
     inset-inline-start: 66%;
@@ -51,11 +51,11 @@
     box-shadow: var(--shadow-subtle);
     padding: var(--spacing-sm) var(--spacing-md);
   }
-  .social-list.active {
+  .card-footer.active .social-list {
     gap: var(--spacing-md);
   }
 
-  .social-nav::after.active {
+  .card-footer.active .social-nav::after {
     content: "";
     position: absolute;
     inset-block-end: -14px;

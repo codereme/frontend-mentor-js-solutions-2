@@ -231,10 +231,10 @@ html {
 .card-footer.active {
   background-color: var(--very-dark-grayish-blue);
 }
-.author-content.active {
+.card-footer.active .author-content {
   display: none;
 }
-.social-nav.active {
+.card-footer.active .social-nav {
   display: flex;
 }
 
