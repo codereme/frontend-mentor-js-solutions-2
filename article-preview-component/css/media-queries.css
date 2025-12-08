@@ -31,17 +31,18 @@
 
 @media (min-width: 64rem) {
   .card-footer {
-    position: relative;
+    position: relative; /* for tooltip */
     padding-block-start: 0;
   }
 
-  .author-show {
+  /* Classes for JavaScript */
+  .card-footer.active {
     background-color: var(--white);
   }
-  .author-show .author-content {
+  .author-content.active {
     display: flex;
   }
-  .author-show .social-nav {
+  .social-nav.active {
     position: absolute;
     inset-block-start: -60px;
     inset-inline-start: 66%;
@@ -50,11 +51,11 @@
     box-shadow: var(--shadow-subtle);
     padding: var(--spacing-sm) var(--spacing-md);
   }
-  .author-show .social-list {
+  .social-list.active {
     gap: var(--spacing-md);
   }
 
-  .author-show .social-nav::after {
+  .social-nav::after.active {
     content: "";
     position: absolute;
     inset-block-end: -14px;

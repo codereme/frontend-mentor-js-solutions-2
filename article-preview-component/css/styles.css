@@ -130,8 +130,7 @@ html {
   align-items: center;
   justify-content: space-between;
 
-  padding-inline: var(--spacing-lg);
-  padding-block: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
 
   background-color: var(--white);
   border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
@@ -221,15 +220,21 @@ html {
 
 /*-------------------------- *\
   #CLASSES-FOR-JAVASCRIPT 
+
+  When click the share button, 
+  the active class toggle: 
+  . the card footer background color change,
+  . the author content hide,
+  . the social nav show
 \*---------------------------*/
 
-.author-show {
+.card-footer.active {
   background-color: var(--very-dark-grayish-blue);
 }
-.author-show .author-content {
+.author-content.active {
   display: none;
 }
-.author-show .social-nav {
+.social-nav.active {
   display: flex;
 }
 
