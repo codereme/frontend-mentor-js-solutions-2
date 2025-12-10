@@ -20,6 +20,14 @@
     border-radius: 0 0 var(--border-radius-sm) 0;
   }
 
+  .share-button:hover {
+    background-color: var(--desaturated-dark-blue);
+  }
+  .share-button:hover,
+  .card-footer.active .share-button {
+    color: var(--white);
+  }
+
   /* Tooltip (not using card overflow hidden) */
   .social-nav {
     position: absolute;

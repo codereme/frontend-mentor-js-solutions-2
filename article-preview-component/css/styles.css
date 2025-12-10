@@ -179,19 +179,14 @@ html {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: var(--shadow-subtle);
-  transition: 0.2s ease;
-}
-.share-button:hover {
-  background-color: var(--desaturated-dark-blue);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .card-footer.active .share-button {
   background-color: var(--desaturated-dark-blue);
 }
-.share-button:hover .share-icon,
 .card-footer.active .share-icon {
   color: var(--white);
 }
-
 /*-------------------------- *\
   #SOCIAL-NAV 
 \*---------------------------*/
