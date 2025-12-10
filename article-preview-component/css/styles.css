@@ -74,7 +74,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-block-size: 100vh;
+  min-block-size: 100dvh;
   background-color: var(--light-grayish-blue);
 }
 
@@ -93,12 +93,13 @@ html {
 
 .card-image {
   inline-size: 100%;
-  block-size: 15rem;
+  block-size: 16rem;
 
   background-image: url("../assets/images/drawers.jpg");
   background-size: cover;
   background-position-y: 20%;
   background-repeat: no-repeat;
+
   border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
 }
 
@@ -164,7 +165,7 @@ html {
 \*---------------------------*/
 
 .share-button {
-  display: flex;
+  display: flex; /* to align share icon */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -173,6 +174,7 @@ html {
   block-size: 2.7rem;
 
   border: none;
+  background-color: var(--light-grayish-blue);
   color: var(--desaturated-dark-blue);
   border-radius: 50%;
   cursor: pointer;
@@ -182,7 +184,11 @@ html {
 .share-button:hover {
   background-color: var(--desaturated-dark-blue);
 }
-.share-button:hover .share-icon {
+.card-footer.active .share-button {
+  background-color: var(--desaturated-dark-blue);
+}
+.share-button:hover .share-icon,
+.card-footer.active .share-icon {
   color: var(--white);
 }
 
@@ -217,13 +223,15 @@ html {
   block-size: 1.4rem;
   color: var(--white);
 }
-
+.social-icon:hover {
+  color: var(--grayish-blue);
+}
 /*-------------------------- *\
   #CLASSES-FOR-JAVASCRIPT 
 
   When click the share button, 
   the active class toggle: 
-  . the card footer background color change,
+  . the card footer background color,
   . the author content hide,
   . the social nav show
 \*---------------------------*/
@@ -237,7 +245,6 @@ html {
 .card-footer.active .social-nav {
   display: flex;
 }
-
 @media (prefers-reduced-motion: reduce) {
   .share-button,
   .social-link {
