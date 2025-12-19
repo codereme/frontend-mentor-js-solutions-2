@@ -1,19 +1,23 @@
 /*-------------------------- *\
   #MEDIA-QUERIES 
 \*---------------------------*/
+
 @media (min-width: 48rem) {
   .card {
     display: flex;
     max-inline-size: 57rem;
   }
+
   .card-image {
     block-size: auto;
     border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
   }
+
   .card-title {
     font-size: var(--fs-xl);
     max-inline-size: 26ch;
   }
+
   .card-footer {
     position: relative; /* for tooltip */
     padding-block-end: var(--spacing-lg);
@@ -23,12 +27,14 @@
   .share-button:hover {
     background-color: var(--desaturated-dark-blue);
   }
+
   .share-button:hover,
   .card-footer.active .share-button {
     color: var(--white);
   }
 
   /* Tooltip (not using card overflow hidden) */
+
   .social-nav {
     position: absolute;
     inset-block-start: -60px;
@@ -58,9 +64,11 @@
   }
 
   /* Classes for JavaScript */
+
   .card-footer.active {
     background-color: var(--white);
   }
+
   .card-footer.active .author-content {
     display: flex;
   }
@@ -70,6 +78,7 @@
   .card-footer.active .social-nav {
     inset-inline-start: 50%;
   }
+
   .card-footer.active .social-nav::after {
     transform: translateX(-50%);
   }

@@ -2,13 +2,13 @@
 * CONTENTS
 *
 * RESET
-* GLOBAL STYLES
+* GLOBAL-STYLES
 * LAYOUT
 * CARD
 * CARD-FOOTER
 * BUTTON-SHARE
 * SOCIAL-NAV
-* CLASSES FOR JAVASCRIPT
+* CLASSES-FOR-JAVASCRIPT
 */
 
 /*-------------------------- *\
@@ -70,6 +70,7 @@ html {
 /*-------------------------- *\
   #LAYOUT 
 \*---------------------------*/
+
 .main-container {
   display: flex;
   justify-content: center;
@@ -107,6 +108,7 @@ html {
   padding: var(--spacing-lg);
   padding-block-end: var(--spacing-md);
 }
+
 .card-title {
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
@@ -115,6 +117,7 @@ html {
 
   margin-block-end: var(--spacing-md);
 }
+
 .card-description {
   font-weight: var(--fw-medium);
   font-size: var(--fs-md);
@@ -136,6 +139,7 @@ html {
   background-color: var(--white);
   border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
 }
+
 .author-content {
   display: flex;
   align-items: center;
@@ -148,11 +152,13 @@ html {
   color: var(--very-dark-grayish-blue);
   line-height: 1.6;
 }
+
 .published-date {
   font-size: var(--fs-md);
   font-weight: var(--fw-medium);
   color: var(--desaturated-dark-blue);
 }
+
 .author-avatar {
   inline-size: 2.7rem;
   block-size: 2.7rem;
@@ -181,26 +187,24 @@ html {
   box-shadow: var(--shadow-subtle);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.card-footer.active .share-button {
-  background-color: var(--desaturated-dark-blue);
-}
-.card-footer.active .share-icon {
-  color: var(--white);
-}
+
 /*-------------------------- *\
   #SOCIAL-NAV 
 \*---------------------------*/
+
 .social-nav {
   display: none;
   padding-block: var(--spacing-xs);
   background-color: var(--very-dark-grayish-blue);
 }
+
 .social-list {
   list-style: none;
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
 }
+
 .social-link {
   text-decoration: none;
 }
@@ -213,14 +217,17 @@ html {
   letter-spacing: 0.15rem;
   color: var(--grayish-blue);
 }
+
 .social-icon {
   inline-size: 1.4rem;
   block-size: 1.4rem;
   color: var(--white);
 }
+
 .social-icon:hover {
   color: var(--grayish-blue);
 }
+
 /*-------------------------- *\
   #CLASSES-FOR-JAVASCRIPT 
 
@@ -234,12 +241,23 @@ html {
 .card-footer.active {
   background-color: var(--very-dark-grayish-blue);
 }
+
+.card-footer.active .share-button {
+  background-color: var(--desaturated-dark-blue);
+}
+
+.card-footer.active .share-icon {
+  color: var(--white);
+}
+
 .card-footer.active .author-content {
   display: none;
 }
+
 .card-footer.active .social-nav {
   display: flex;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .share-button,
   .social-link {

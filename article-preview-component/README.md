@@ -5,8 +5,8 @@ This project is my solution to the "Article Preview Component" challenge from Fr
 ## Table of contents
 
 - [Overview](#overview)
-- [Built with](#built-with)
 - [Screenshot](#screenshot)
+- [Built with](#built-with)
 - [Links](#links)
 - [What I Learned](#what-i-learned)
 - [Author](#author)
