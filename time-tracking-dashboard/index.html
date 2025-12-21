@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <meta name="description" content="Solution to Time Tracking Dashboard challenge on Frontend Mentor.">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+
+  <script src="./js/app.js" defer></script>
+
+</head>
+
+<body>
+
+  <main>
+
+    <section class="dashboard">
+
+      <div class="container">
+
+        <header class="dashboard__header">
+
+          <div class="dashboard__profile">
+
+            <img src="./assets/images/image-jeremy.png" alt="Jeremy Robson" class="avatar">
+
+            <h1 class="dashboard__title">
+              Report for
+              <span class="name">Jeremy Robson</span>
+            </h1>
+          </div> <!-- dashboard profile end -->
+
+          <div class="timeframe-selector">
+
+            <button class="timeframe-btn" data-timeframe="daily">Daily</button>
+
+            <button class="timeframe-btn active" data-timeframe="weekly">Weekly</button>
+
+            <button class="timeframe-btn" data-timeframe="monthly">Monthly</button>
+
+          </div> <!-- timeframe selector end -->
+
+        </header>
+
+
+        <div class="content grid-cards" id="content"></div>
+
+      </div> <!-- grid content end -->
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/codereme">@codereme</a>.
+    </div>
+  </footer>
+
+</body>
+
+</html>
