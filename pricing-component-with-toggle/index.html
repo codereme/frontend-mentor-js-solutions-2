@@ -11,28 +11,43 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="./js/app.js" defer></script>
 </head>
 
 <body>
 
   <main>
+
     <section class="plans">
 
       <div class="container">
 
         <h1 class="plans__title">Our Pricing</h1>
 
-        Annually
-        Monthly
+        <div class="toggle-container">
+
+          <span class="toggle-label" id="yearly-label">Annually</span>
+
+          <label class="switch">
+            <input type="checkbox" id="price-toggle">
+            <span class="slider round"></span>
+          </label>
+
+          <span class="toggle-label" id="monthly-label">Monthly</span>
+
+        </div>
+        <!-- toggle container end -->
+
 
         <div class="cards" id="cards"></div>
 
       </div>
-      <!--  &dollar; -->
+      <!-- section container end -->
+
     </section>
   </main>
+
 
 
 

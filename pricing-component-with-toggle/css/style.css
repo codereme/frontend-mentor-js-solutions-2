@@ -1,0 +1,157 @@
+/** 
+* CONTENTS
+*
+* RESET
+* GLOBAL-STYLES
+
+
+*/
+
+/*-------------------------- *\
+  #RESET 
+\*---------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*-------------------------- *\
+  #GLOBAL-STYLES 
+\*---------------------------*/
+
+:root {
+  /* Colors */
+  --white: hsl(0, 0, 100%);
+  --blue-50: hsl(240, 78%, 98%);
+  --gray-650: hsl(233, 13%, 49%);
+  --gray-700: hsl(232, 13%, 33%);
+
+  --blue-gradient: linear-gradient(hsl(237, 73%, 79%), hsl(238, 63%, 64%));
+
+  /* Fonts */
+
+  --ff-body: "Montserrat", sans-serif;
+  --fs-base: 15px;
+
+  --fw-bold: 700;
+}
+
+html {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+}
+
+ul {
+  list-style-type: none;
+}
+/*-------------------------- *\
+  #TOGGLE 
+\*---------------------------*/
+
+.toggle-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: max(20vw, 260px);
+  margin: 5rem auto;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--blue-gradient);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-image: var(--blue-gradient);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/*-------------------------- *\
+  #PLANS 
+\*-------------------------- */
+* {
+  outline: 1px solid red;
+}
+
+.plans {
+  background-color: var(--blue-50);
+}
+
+.plans__title {
+  text-align: center;
+}
+
+.plan__title {
+  font-weight: 700;
+}
+
+.plan__card {
+  padding: 2rem;
+
+  text-align: center;
+  background-color: var(--white);
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.price--monthly,
+.price--yearly {
+  display: none;
+}
+
+.active {
+  display: block;
+}
