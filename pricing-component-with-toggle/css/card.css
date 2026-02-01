@@ -1,0 +1,125 @@
+/*-------------------------- *\
+  #CARD 
+\*-------------------------- */
+
+.plan__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  inline-size: min(20rem, 90vw);
+  padding: 1.8rem;
+
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.plan__name {
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  color: var(--gray-650);
+}
+
+.price {
+  font-size: 2.8rem;
+  font-weight: var(--fw-bold);
+  color: var(--gray-900);
+}
+
+.price--monthly,
+.price--yearly {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.features {
+  border-top: 1px solid hsl(233, 13%, 85%);
+}
+
+.feature__item {
+  padding-block: 1rem;
+  font-weight: var(--fw-bold);
+  color: var(--gray-700);
+  border-bottom: 1px solid hsl(233, 13%, 85%);
+}
+
+.primary-btn {
+  padding: 0.8em;
+  background-image: var(--blue-gradient);
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover,
+.primary-btn:focus-visible {
+  background-image: none;
+  border: 1px solid hsl(233, 13%, 85%);
+  background-color: var(--white);
+  color: var(--gray-650);
+}
+
+.plan__card:nth-child(2) {
+  background-image: var(--blue-gradient);
+}
+
+.plan__card:nth-child(2) .plan__name,
+.plan__card:nth-child(2) .price {
+  color: var(--white);
+}
+
+.plan__card:nth-child(2) .features {
+  border-top: 1px solid hsl(233, 13%, 70%);
+}
+
+.plan__card:nth-child(2) .feature__item {
+  color: var(--white);
+  border-bottom: 1px solid hsl(233, 13%, 70%);
+}
+
+.plan__card:nth-child(2) .primary-btn {
+  background-image: none;
+  background-color: var(--white);
+  color: var(--gray-650);
+}
+
+.plan__card:nth-child(2) .primary-btn:hover,
+.plan__card:nth-child(2) .primary-btn:focus-visible {
+  background-image: var(--blue-gradient);
+
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+@media (min-width: 48rem) {
+  .cards {
+    gap: 0;
+  }
+
+  .plan__card:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .plan__card:nth-child(2) {
+    inline-size: 22rem;
+    block-size: 30rem;
+    padding-block-start: 3rem;
+  }
+
+  .plan__card:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

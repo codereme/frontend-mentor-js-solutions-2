@@ -25,12 +25,19 @@
 
 :root {
   /* Colors */
-  --white: hsl(0, 0, 100%);
+
+  --white: hsl(0, 0%, 100%);
   --blue-50: hsl(240, 78%, 98%);
+  --blue-90: hsl(240, 11%, 95%);
   --gray-650: hsl(233, 13%, 49%);
   --gray-700: hsl(232, 13%, 33%);
+  --gray-900: hsl(231, 55%, 20%);
 
-  --blue-gradient: linear-gradient(hsl(237, 73%, 79%), hsl(238, 63%, 64%));
+  --blue-gradient: linear-gradient(
+    50deg,
+    hsl(237, 73%, 79%),
+    hsl(238, 63%, 64%)
+  );
 
   /* Fonts */
 
@@ -48,110 +55,79 @@ html {
 ul {
   list-style-type: none;
 }
-/*-------------------------- *\
-  #TOGGLE 
-\*---------------------------*/
 
-.toggle-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: max(20vw, 260px);
-  margin: 5rem auto;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: var(--blue-gradient);
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider:before {
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-image: var(--blue-gradient);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
+a {
+  text-decoration: none;
 }
 
 /*-------------------------- *\
-  #PLANS 
+  #LAYOUT 
 \*-------------------------- */
-* {
-  outline: 1px solid red;
+
+.container {
+  min-block-size: 100dvh;
+  padding: 3.5rem 1rem;
 }
 
 .plans {
-  background-color: var(--blue-50);
+  background-color: var(--blue-90);
+  background-image: url(../assets/images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-size: 25rem;
+  background-position: right -51vw top -4vh;
 }
 
 .plans__title {
+  font-weight: var(--fw-bold);
   text-align: center;
+  color: var(--gray-700);
 }
 
-.plan__title {
-  font-weight: 700;
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.plan__card {
-  padding: 2rem;
+.footer {
+  padding-block: 1.5rem;
+  background-color: var(--blue-90);
+}
 
+.attribution {
+  font-size: 0.9rem;
   text-align: center;
-  background-color: var(--white);
+  color: var(--gray-650);
 }
 
-.price {
-  font-size: 2rem;
-  font-weight: 700;
+.attribution__link {
+  color: var(--gray-650);
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.price--monthly,
-.price--yearly {
-  display: none;
+.attribution__link:hover {
+  color: var(--gray-900);
 }
 
-.active {
-  display: block;
+/*-------------------------- *\
+  #MEDIA-QUERIES 
+\*-------------------------- */
+
+@media (min-width: 48rem) {
+  .plans {
+    background-image: url(../assets/images/bg-top.svg),
+      url(../assets/images/bg-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: 20rem, 20rem;
+    background-position: right top, left bottom;
+  }
+
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }

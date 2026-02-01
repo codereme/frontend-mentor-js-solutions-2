@@ -9,9 +9,13 @@
 
   <meta name="description" content="Solution to Pricing Component with toggle challenge on Frontend Mentor.">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
+  <link rel="stylesheet" href="./css/fonts.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/toggle.css">
+  <link rel="stylesheet" href="./css/card.css">
+
   <script src="./js/app.js" defer></script>
 </head>
 
@@ -29,7 +33,7 @@
 
           <span class="toggle-label" id="yearly-label">Annually</span>
 
-          <label class="switch">
+          <label class="switch" for="price-toggle">
             <input type="checkbox" id="price-toggle">
             <span class="slider round"></span>
           </label>
@@ -51,10 +55,11 @@
 
 
 
-  <footer>
+  <footer class="footer">
     <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://github.com/codereme">@codereme</a>.
+      Challenge by <a class="attribution__link" href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank">Frontend Mentor</a>.
+      Coded by <a class="attribution__link" href="https://github.com/codereme" target="_blank">@codereme</a>.
     </div>
   </footer>
 

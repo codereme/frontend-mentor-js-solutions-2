@@ -1,47 +1,51 @@
-const URL = "./js/data.json";
+const DATA_URL = "./js/data.json";
 
-function mostrarPlanes(planes) {
+function showPlans(plans) {
   const cards = document.getElementById("cards");
 
   cards.innerHTML = "";
 
-  planes.forEach((plan) => {
-    const planElemento = document.createElement("div");
-    planElemento.classList.add("plan__card");
+  plans.forEach((plan) => {
+    const planElement = document.createElement("div");
+    planElement.classList.add("plan__card");
 
-    planElemento.innerHTML = `
+    planElement.innerHTML = `
      
             <h2 class="plan__name">${plan.name}</h2>
 
-            <div class="precios">
+            <div class="prices">
                 <p class="price  price--yearly ${
-                  !mostrarMensual ? "active" : ""
+                  !showMonthly ? "active" : ""
                 }">&dollar; ${plan.yearly} </p>
 
                 <p class="price  price--monthly ${
-                  mostrarMensual ? "active" : ""
+                  showMonthly ? "active" : ""
                 } ">&dollar; ${plan.monthly} </p>
             </div>
 
             <div class="features">
                 <ul>
                     ${plan.features
-                      .map((feature) => `<li>${feature}</li>`)
+                      .map(
+                        (feature) => `<li class="feature__item">${feature}</li>`
+                      )
                       .join("")}
                 </ul>
             </div>
+
+            <a href="#" class="primary-btn">Learn more</a>
      
     `;
 
-    cards.appendChild(planElemento);
+    cards.appendChild(planElement);
   });
 }
 
-function actualizarToggle() {
+function updateToggle() {
   const monthlyLabel = document.getElementById("monthly-label");
   const yearlyLabel = document.getElementById("yearly-label");
 
-  if (mostrarMensual) {
+  if (showMonthly) {
     monthlyLabel.classList.add("active");
     yearlyLabel.classList.remove("active");
   } else {
@@ -50,25 +54,23 @@ function actualizarToggle() {
   }
 }
 
-let mostrarMensual = true;
+let showMonthly = false;
 
 function inicializar(data) {
-  mostrarPlanes(data);
-  actualizarToggle();
+  showPlans(data);
+  updateToggle();
 
   const toggle = document.getElementById("price-toggle");
 
-  toggle.checked = true;
-
   toggle.addEventListener("change", function () {
-    mostrarMensual = this.checked;
+    showMonthly = this.checked;
 
-    mostrarPlanes(data);
-    actualizarToggle();
+    showPlans(data);
+    updateToggle();
   });
 }
 
-fetch(URL)
+fetch(DATA_URL)
   .then((response) => {
     if (!response.ok) {
       throw new Error("Error");
