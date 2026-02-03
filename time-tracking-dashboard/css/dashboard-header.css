@@ -1,0 +1,42 @@
+/*-------------------------- *\
+  #DASHBOARD
+\*-------------------------- */
+
+.dashboard__header {
+  border-radius: 1rem;
+  background-color: var(--navy-900);
+}
+
+.dashboard__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--purple-600);
+}
+
+.avatar {
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+  display: block;
+
+  inline-size: 5rem;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+}
+
+.dashboard__title {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-light);
+  color: var(--navy-200);
+}
+
+.dashboard__profile-name {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: var(--fw-light);
+  color: var(--white);
+}

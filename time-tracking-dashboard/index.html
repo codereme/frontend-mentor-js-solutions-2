@@ -11,8 +11,13 @@
 
   <meta name="description" content="Solution to Time Tracking Dashboard challenge on Frontend Mentor.">
 
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="./css/dashboard-header.css">
+  <link rel="stylesheet" href="./css/selector-buttons.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <link rel="stylesheet" href="./css/media-queries.css">
 
   <script src="./js/app.js" defer></script>
 
@@ -22,49 +27,60 @@
 
   <main>
 
-    <section class="dashboard">
+    <section class="dashboard-section">
 
-      <div class="container">
+      <div class="grid-container">
 
-        <header class="dashboard__header">
+        <div class="dashboard__header">
 
           <div class="dashboard__profile">
 
             <img src="./assets/images/image-jeremy.png" alt="Jeremy Robson" class="avatar">
 
-            <h1 class="dashboard__title">
-              Report for
-              <span class="name">Jeremy Robson</span>
-            </h1>
-          </div> <!-- dashboard profile end -->
+            <div>
+              <h1 class="dashboard__title">
+                Report for
+              </h1>
+              <span class="dashboard__profile-name">Jeremy Robson</span>
+            </div>
+
+          </div>
+          <!-- dashboard profile end -->
+
 
           <div class="timeframe-selector">
 
             <button class="timeframe-btn" data-timeframe="daily">Daily</button>
-
             <button class="timeframe-btn active" data-timeframe="weekly">Weekly</button>
-
             <button class="timeframe-btn" data-timeframe="monthly">Monthly</button>
 
-          </div> <!-- timeframe selector end -->
+          </div>
+          <!-- timeframe selector end -->
 
-        </header>
+        </div>
+        <!-- dashboard header end -->
 
+        <div class="content  grid-cards" id="content"></div>
 
-        <div class="content grid-cards" id="content"></div>
-
-      </div> <!-- grid content end -->
+      </div>
+      <!-- container end -->
 
     </section>
 
   </main>
 
 
+
+
+
   <footer class="footer">
+
     <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://github.com/codereme">@codereme</a>.
+      Challenge by <a class="attribution__link" href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank">Frontend Mentor</a>.
+      Coded by <a class="attribution__link" href="https://github.com/codereme" target="_blank">@codereme</a>.
     </div>
+
   </footer>
 
 </body>

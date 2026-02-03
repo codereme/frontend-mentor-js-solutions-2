@@ -4,6 +4,18 @@ const selector = document.querySelector(".timeframe-selector");
 let selectedTimeframe = "weekly";
 let appData = [];
 
+const buttons = document.querySelectorAll(".timeframe-btn");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    buttons.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    this.classList.add("active");
+  });
+});
+
 selector.addEventListener("click", (e) => {
   if (e.target.matches("button[data-timeframe]")) {
     selectedTimeframe = e.target.dataset.timeframe;
@@ -26,7 +38,8 @@ const updateCards = () => {
 
 /* Create each card */
 const appendItem = (item) => {
-  const card = document.createElement("article");
+  const card = document.createElement("section");
+  card.classList.add("card");
 
   const timeframeData = item.timeframes[selectedTimeframe];
 
@@ -40,21 +53,18 @@ const appendItem = (item) => {
   }
 
   card.innerHTML = `
-    <div class="card card-${item.title.toLowerCase()}">
       <div class="card__content">
+
         <div class="row">
           <h2 class="card__title">${item.title}</h2>
           <img src="./assets/images/icon-ellipsis.svg" alt="" class="icon-menu" aria-hidden="true">
         </div>
-
         <div class="card__details">
           <p  class="card__details--hours">${timeframeData.current} hrs</p>
-          <p class="card__details--period">${period} - ${
-    timeframeData.previous
-  } hrs</p>
+          <p class="card__details--period">${period} - ${timeframeData.previous} hrs</p>
         </div>
       </div>
-    </div>
+    
   `;
 
   content.appendChild(card);
