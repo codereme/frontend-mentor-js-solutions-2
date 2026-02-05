@@ -1,6 +1,6 @@
-# Time tracking dashboard
+# Time Tracking Dashboard
 
-This project is my solution to the "Pricing component with toggle" challenge from Frontend Mentor.
+This project is my solution to the "Time Tracking Dashboard" challenge from Frontend Mentor.
 
 ## Table of contents
 

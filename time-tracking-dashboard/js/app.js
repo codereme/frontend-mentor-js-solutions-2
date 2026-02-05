@@ -1,32 +1,38 @@
-const content = document.getElementById("content");
-const selector = document.querySelector(".timeframe-selector");
+const URL_DATA = "./js/data.json";
 
-let selectedTimeframe = "weekly";
+const content = document.getElementById("content");
+let selectedPeriod = "weekly";
 let appData = [];
 
-const buttons = document.querySelectorAll(".timeframe-btn");
+fetch(URL_DATA)
+  .then((response) => {
+    if (!response.ok) return console.log("oops! Something went wrong");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", function () {
-    buttons.forEach((btn) => {
-      btn.classList.remove("active");
-    });
-
-    this.classList.add("active");
-  });
-});
-
-selector.addEventListener("click", (e) => {
-  if (e.target.matches("button[data-timeframe]")) {
-    selectedTimeframe = e.target.dataset.timeframe;
-  }
-
-  if (appData.length > 0) {
+    return response.json();
+  })
+  .then((data) => {
+    appData = data;
     updateCards();
-  } else {
-    console.log("no data");
-  }
-});
+    handleButtons();
+  });
+
+const handleButtons = () => {
+  const buttons = document.querySelectorAll(".timeframe-btn");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      buttons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      e.target.classList.add("active");
+
+      selectedPeriod = e.target.dataset.timeframe;
+
+      updateCards();
+    });
+  });
+};
 
 const updateCards = () => {
   content.innerHTML = "";
@@ -36,21 +42,18 @@ const updateCards = () => {
   });
 };
 
-/* Create each card */
 const appendItem = (item) => {
   const card = document.createElement("section");
   card.classList.add("card");
 
-  const timeframeData = item.timeframes[selectedTimeframe];
+  const currentHours = item.timeframes[selectedPeriod].current;
+  const previousHours = item.timeframes[selectedPeriod].previous;
 
-  let period;
-  if (selectedTimeframe === "daily") {
-    period = "Yesterday";
-  } else if (selectedTimeframe === "weekly") {
-    period = "Last Week";
-  } else {
-    period = "Last Month";
-  }
+  let textPeriod;
+
+  if (selectedPeriod === "daily") textPeriod = "Yesterday";
+  if (selectedPeriod === "weekly") textPeriod = "Last week";
+  if (selectedPeriod === "monthly") textPeriod = "Last month";
 
   card.innerHTML = `
       <div class="card__content">
@@ -60,30 +63,10 @@ const appendItem = (item) => {
           <img src="./assets/images/icon-ellipsis.svg" alt="" class="icon-menu" aria-hidden="true">
         </div>
         <div class="card__details">
-          <p  class="card__details--hours">${timeframeData.current} hrs</p>
-          <p class="card__details--period">${period} - ${timeframeData.previous} hrs</p>
+          <p  class="card__details--hours">${currentHours} hrs</p>
+          <p class="card__details--period">${textPeriod} - ${previousHours} hrs</p>
         </div>
       </div>
-    
-  `;
-
+    `;
   content.appendChild(card);
 };
-
-const populateDOM = (data) => {
-  appData = data;
-
-  appData.forEach((item) => {
-    appendItem(item);
-  });
-};
-
-fetch("./js/data.json")
-  .then((response) => {
-    if (!response.ok) return console.log("oops! Something went wrong");
-
-    return response.json();
-  })
-  .then((data) => {
-    populateDOM(data);
-  });
