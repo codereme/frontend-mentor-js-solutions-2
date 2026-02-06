@@ -8,6 +8,7 @@ This project is my solution to the "Time Tracking Dashboard" challenge from Fron
 - [Screenshot](#screenshot)
 - [Built with](#built-with)
 - [Links](#links)
+- [What I learned](#what-i-learned)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -45,6 +46,16 @@ Your users should be able to:
 ## Links
 
 - Live site: [View here](https://codereme.github.io/frontend-mentor-js-solutions-2/time-tracking-dashboard/index.html)
+
+## What I learned
+
+After completing this challenge, my next lesson in [Javascript Fundamentals learning path](https://www.frontendmentor.io/learning-paths/javascript-fundamentals-oR7g6-mTZ-) is **Refactoring your code**. Through this project, I've already started applying key refactoring concepts:
+
+- **Pure Functions**: Created reusable functions like `getPeriodText()` and `createCardHTML()`
+- **State Management**: Implemented a centralized state object for data flow.
+- **Event Delegation**: Used a single event listener on the container to handle multiple buttons efficiently.
+
+I'll continue refactoring previous projects to explore different approaches and deepen my understanding of JavaScript fundamentals.
 
 ## Author
 

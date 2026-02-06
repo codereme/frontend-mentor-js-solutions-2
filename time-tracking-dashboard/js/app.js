@@ -1,61 +1,30 @@
+/* Constants */
 const URL_DATA = "./js/data.json";
-
 const content = document.getElementById("content");
-let selectedPeriod = "weekly";
-let appData = [];
 
-fetch(URL_DATA)
-  .then((response) => {
-    if (!response.ok) return console.log("oops! Something went wrong");
-
-    return response.json();
-  })
-  .then((data) => {
-    appData = data;
-    updateCards();
-    handleButtons();
-  });
-
-const handleButtons = () => {
-  const buttons = document.querySelectorAll(".timeframe-btn");
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      buttons.forEach((btn) => {
-        btn.classList.remove("active");
-      });
-
-      e.target.classList.add("active");
-
-      selectedPeriod = e.target.dataset.timeframe;
-
-      updateCards();
-    });
-  });
+/* State management */
+const state = {
+  selectedPeriod: "weekly",
+  appData: [],
 };
 
-const updateCards = () => {
-  content.innerHTML = "";
-
-  appData.forEach((item) => {
-    appendItem(item);
-  });
+/* Helpers */
+const getPeriodText = (period) => {
+  const periodMap = {
+    daily: "Yesterday",
+    weekly: "Last week",
+    monthly: "Last month",
+  };
+  return periodMap[period];
 };
 
-const appendItem = (item) => {
-  const card = document.createElement("section");
-  card.classList.add("card");
+const createCardHTML = (item, period) => {
+  const currentHours = item.timeframes[period].current;
+  const previousHours = item.timeframes[period].previous;
+  const textPeriod = getPeriodText(period);
 
-  const currentHours = item.timeframes[selectedPeriod].current;
-  const previousHours = item.timeframes[selectedPeriod].previous;
-
-  let textPeriod;
-
-  if (selectedPeriod === "daily") textPeriod = "Yesterday";
-  if (selectedPeriod === "weekly") textPeriod = "Last week";
-  if (selectedPeriod === "monthly") textPeriod = "Last month";
-
-  card.innerHTML = `
+  return `
+    <section class="card">
       <div class="card__content">
 
         <div class="row">
@@ -66,7 +35,60 @@ const appendItem = (item) => {
           <p  class="card__details--hours">${currentHours} hrs</p>
           <p class="card__details--period">${textPeriod} - ${previousHours} hrs</p>
         </div>
+
       </div>
-    `;
-  content.appendChild(card);
+    </section>  
+  `;
 };
+
+/* DOM manipulation */
+const updateCards = () => {
+  content.innerHTML = state.appData
+    .map((item) => createCardHTML(item, state.selectedPeriod))
+    .join("");
+};
+
+/* Event handling */
+const setupEventListeners = () => {
+  const container = document.querySelector(".timeframe-selector");
+  container.addEventListener("click", (e) => {
+    if (e.target.classList.contains("timeframe-btn")) {
+      e.preventDefault();
+
+      const buttons = document.querySelectorAll(".timeframe-btn");
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      e.target.classList.add("active");
+
+      state.selectedPeriod = e.target.dataset.timeframe;
+
+      updateCards();
+    }
+  });
+};
+
+/* Initialization */
+const initializeApp = () => {
+  fetch(URL_DATA)
+    .then((response) => {
+      if (!response.ok) return console.log("oops! Something went wrong");
+
+      return response.json();
+    })
+    .then((data) => {
+      state.appData = dat;
+
+      updateCards();
+      setupEventListeners();
+    })
+    .catch((error) => {
+      console.log("Error loading data", error);
+      content.innerHTML = `
+        <div class="error">
+          <p class="error">Error loading data. Please try again later.</p>
+        </div>
+      `;
+    });
+};
+
+/* Start */
+initializeApp();

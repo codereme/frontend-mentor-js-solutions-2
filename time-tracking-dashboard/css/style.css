@@ -109,3 +109,12 @@ body {
 .attribution__link:focus-visible {
   color: var(--green-400);
 }
+
+/*-------------------------- *\
+  #ERROR
+\*-------------------------- */
+.error {
+  inline-size: 10rem;
+  font-size: 1rem;
+  color: var(--white);
+}
